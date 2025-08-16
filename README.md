@@ -1,67 +1,73 @@
-# 🧪 Exploratory Data Analysis (EDA) — One-Day Session
+# 📦 Exploratory Data Analysis (EDA2) — Product-Based Case Study
 
-This repository contains the complete code and insights from a one-day hands-on EDA session focused on two real-world case studies:
-
-- **Case Study 1**: Food Delivery Service Dataset (Service-Based)
-- **Case Study 2**: Product Dataset (Product-Based)
+This repository contains the complete code and visualizations from the second EDA case study, focused on customer purchase behavior for a private retail company. The dataset includes one month of purchase summaries for high-volume products.
 
 ---
 
 ## 📂 Datasets Used
 
-- `zomato.csv`: Restaurant-level data including ratings, delivery options, cuisine types, and geographic details.
-- `Country-Code.xlsx`: Mapping of country codes to country names.
+- `train.csv`: Customer purchase records including product categories and purchase amounts
+- `test.csv`: Similar structure, excluding the `Purchase` column
 
 ---
 
-## 🔍 Objectives
+## 🎯 Problem Statement
 
-- Perform structured EDA on both datasets
-- Identify data quality issues, outliers, and missing values
-- Visualize key patterns across cities, countries, ratings, and delivery options
-- Derive actionable insights for business and product strategy
+A private retail company (XYZ) shared customer purchase data for selected high-volume products. The goal is to explore trends and patterns in customer behavior across demographics, product categories, and city segments.
 
 ---
 
 ## 🧠 Key Steps
 
 1. **Data Loading & Inspection**
-   - Used `pandas`, `numpy`, `matplotlib`, and `seaborn`
-   - Checked data types, null values, and duplicates
+   - Imported training and testing datasets
+   - Dropped `Purchase` column from training data for uniformity
+   - Concatenated both datasets for unified analysis
 
 2. **Data Cleaning**
-   - Removed rows with missing values in `Cuisines`
-   - Merged country codes for clarity
+   - Checked for duplicates and null values
+   - Imputed missing values in `Product_Category_2` and `Product_Category_3` with a new category `21`
+   - Converted relevant columns to categorical types
 
-3. **Univariate Analysis**
-   - Pie charts for top countries and cities
-   - Count plots for rating colors, delivery options, and city categories
+3. **Feature Engineering**
+   - Mapped `Gender` to binary values (F → 0, M → 1)
+   - Standardized `Stay_In_Current_City_Years` by replacing '4+' with 4
 
-4. **Bivariate Analysis**
-   - Clustered bar plots for aggregate ratings by country
-   - Product affinity by age group using heatmaps
+4. **Univariate & Bivariate Analysis**
+   - Countplots for `Gender`, `Age`, `Occupation`, `City_Category`, `Marital_Status`
+   - Pie charts for city and marital status distributions
+   - Heatmap showing product affinity by age group
+   - FacetGrid plots for multi-dimensional slicing (e.g., Age vs Gender vs City)
 
-5. **Insights & Observations**
-   - India dominates in restaurant count and online delivery
-   - Rating distribution shows left-skewed outliers
-   - Product affinity varies significantly across age groups
-
----
-
-## ⚠️ Challenges Faced
-
-- **Missing values** in `Cuisines` column — handled by dropping due to low impact
-- **Outliers** in `Average Cost for two`, `Votes`, and `Aggregate rating` — identified via descriptive stats
-- **Encoding issues** — resolved using `'latin-1'` during CSV import
+5. **Statistical Summary**
+   - Descriptive statistics for numerical columns
+   - Distribution analysis for categorical features
 
 ---
 
 ## 📊 Visualizations Included
 
-- Pie charts (Top countries, cities, online delivery)
-- Count plots (Rating color, city category, marital status)
-- Clustered bar plots (Aggregate rating by country, occupation by gender)
-- Heatmap (Product affinity by age group)
+- Countplots (Gender, Age, Occupation, Stay Duration)
+- Pie charts (City Category, Marital Status)
+- Heatmaps (Product Affinity by Age Group, Missing Values)
+- FacetGrid plots (Age distribution across Gender and City)
+
+---
+
+## ⚠️ Challenges Faced
+
+- **Missing values** in product categories — handled via imputation with category `21`
+- **Encoding issues** — resolved during CSV import
+- **Syntax errors** — corrected in plotting sections for clean execution
+
+---
+
+## 📎 Insights & Observations
+
+- Majority of users are aged 26–35 and reside in City Category B
+- Product affinity varies significantly across age groups
+- Gender distribution is slightly skewed toward male users
+- Occupation and marital status show distinct patterns by gender
 
 ---
 
@@ -72,12 +78,14 @@ Special thanks to:
 - **Chirag**
 - **Sandhya**
 
-for their guidance and contributions during the session.
+for their support and collaboration during the session.
 
 ---
 
-## 📎 Next Steps
+## 🚀 Next Steps
 
-- Extend EDA to predictive modeling
-- Share learnings via LinkedIn 
-- Invite feedback and collaboration
+- Extend analysis to predictive modeling (e.g., purchase prediction)
+- Share findings via LinkedIn and invite feedback
+- Explore clustering and segmentation for targeted marketing
+
+

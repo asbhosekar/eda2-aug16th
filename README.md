@@ -75,8 +75,8 @@ A private retail company (XYZ) shared customer purchase data for selected high-v
 
 Special thanks to:
 - **Pranav Jaipurkar**
-- **Chirag**
-- **Sandhya**
+- **Chirag Jhumkawala**
+- **Sandhya Hinduja**
 
 for their support and collaboration during the session.
 
